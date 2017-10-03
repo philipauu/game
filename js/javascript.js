@@ -28,9 +28,9 @@ function setup() {
 }
 
 function startGame() {
-  myGamePiece = new component(30, 30, "red", 10, 120);
+  myGamePiece = new component(30, 30, "pink", 10, 120);
   myGameArea.start();
-  myObstacles = new component(10, 200, "yellow", 300, 120);
+  myObstacles = new component(10, 200, "green", 300, 120);
 }
 
 function component(width, height, color, x, y, type) {
