@@ -131,13 +131,13 @@ function updateGameArea() {
   myGamePiece.update();
 }
 
-function everyinterval(n) {
-  if ((myGameArea.frameNo / n) % 1 == 0) {
+function everyinterval(shift) {
+  if ((myGameArea.frameNo / shift) % 1 == 0) {
     return true;
   }
   return false;
 }
 
-function accelerate(n) {
-  myGamePiece.gravity = n;
+function accelerate(shift) {
+  myGamePiece.gravity = shift;
 }
