@@ -24,16 +24,20 @@ $(document).ready(setup);
 
 function setup() {
   console.log('Inside setup');
+
   startGame();
 }
 
 function startGame() {
+  console.log('Inside startGame');
+
   myGamePiece = new component(30, 30, "pink", 10, 120);
   myGameArea.start();
   myObstacles = new component(10, 200, "green", 300, 120);
 }
 
 function component(width, height, color, x, y, type) {
+
   this.type = type;
   this.score = 0;
   this.width = width;
@@ -91,6 +95,8 @@ function component(width, height, color, x, y, type) {
 }
 
 function updateGameArea() {
+  console.log('Inside updateGameArea');
+
 
   var x, height, gap, minHeight, maxHeight, minGap, maxGap;
   for (counter = 0; counter < myObstacles.length; counter += 1) {
@@ -109,16 +115,16 @@ function updateGameArea() {
     minGap = 50;
     maxGap = 200;
     gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
-    myObstacles.push(new component(10, height, "yellow", x, 0));
-    myObstacles.push(new component(10, x - height - gap, "yellow", x, height + gap));
+    // myObstacles.push(new component(10, height, "yellow", x, 0));
+    // myObstacles.push(new component(10, x - height - gap, "yellow", x, height + gap));
   }
 
   for (counter = 0; counter < myObstacles.length; counter += 1) {
     myObstacles[counter].x += -1;
     myObstacles[counter].update();
   }
-  myScore.text="SCORE: " + myGameArea.frameNo;
-  myScore.update();
+  // myScore.text="SCORE: " + myGameArea.frameNo;
+  // myScore.update();
   myGamePiece.newPos();
   myGamePiece.update();
 }
