@@ -109,16 +109,16 @@ function updateGameArea() {
     minGap = 50;
     maxGap = 200;
     gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
-    // myObstacles.push(new component(10, height, "yellow", x, 0));
-    // myObstacles.push(new component(10, x - height - gap, "yellow", x, height + gap));
+    myObstacles.push(new component(10, height, "yellow", x, 0));
+    myObstacles.push(new component(10, x - height - gap, "yellow", x, height + gap));
   }
 
   for (counter = 0; counter < myObstacles.length; counter += 1) {
     myObstacles[counter].x += -1;
     myObstacles[counter].update();
   }
-  // myScore.text="SCORE: " + myGameArea.frameNo;
-  // myScore.update();
+  myScore.text="SCORE: " + myGameArea.frameNo;
+  myScore.update();
   myGamePiece.newPos();
   myGamePiece.update();
 }
