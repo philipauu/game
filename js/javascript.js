@@ -125,7 +125,7 @@ function updateGameArea() {
     myObstacles[counter].x += -1;
     myObstacles[counter].update();
   }
-  myScore.text="SCORE: " + myGameArea.frameNo;
+  myScore.text = "SCORE: " + myGameArea.frameNo;
   myScore.update();
   myGamePiece.newPos();
   myGamePiece.update();
