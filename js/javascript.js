@@ -16,9 +16,9 @@ var myGameArea = {
   }
 }
 
-var myGamePiece;
-var myObstacles = [];
-var myScore;
+var bird;
+var obstacles = [];
+var score;
 
 $(document).ready(setup);
 
@@ -31,10 +31,10 @@ function setup() {
 function startGame() {
   console.log('Inside startGame');
 
-  myGamePiece = new component(30, 30, "pink", 10, 120);
-  myGamePiece.gravity = 0.04;
-  myScore = new component('30px', 'times new roman', 'black', 280, 40, 'text');
-  myObstacles = new component(10, 200, "green", 300, 120);
+  bird = new component(30, 30, "pink", 10, 120);
+  bird.gravity = 0.04;
+  score = new component('30px', 'times new roman', 'black', 280, 40, 'text');
+  obstacles = new component(10, 200, "green", 300, 120);
   myGameArea.start();
 }
 
@@ -101,8 +101,8 @@ function updateGameArea() {
 
 
   var x, height, gap, minHeight, maxHeight, minGap, maxGap;
-  for (counter = 0; counter < myObstacles.length; counter += 1) {
-    if (myGamePiece.crashWith(myObstacles[counter])) {
+  for (counter = 0; counter < obstacles.length; counter += 1) {
+    if (bird.crashWith(obstacles[counter])) {
       return;
     }
   }
@@ -117,18 +117,18 @@ function updateGameArea() {
     minGap = 50;
     maxGap = 200;
     gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
-    myObstacles.push(new component(10, height, "yellow", x, 0));
-    myObstacles.push(new component(10, x - height - gap, "yellow", x, height + gap));
+    obstacles.push(new component(10, height, "yellow", x, 0));
+    obstacles.push(new component(10, x - height - gap, "yellow", x, height + gap));
   }
 
-  for (counter = 0; counter < myObstacles.length; counter += 1) {
-    myObstacles[counter].x += -1;
-    myObstacles[counter].update();
+  for (counter = 0; counter < obstacles.length; counter += 1) {
+    obstacles[counter].x += -1;
+    obstacles[counter].update();
   }
-  myScore.text = "SCORE: " + myGameArea.frameNo;
-  myScore.update();
-  myGamePiece.newPos();
-  myGamePiece.update();
+  score.text = "SCORE: " + myGameArea.frameNo;
+  score.update();
+  bird.newPos();
+  bird.update();
 }
 
 function everyinterval(shift) {
@@ -139,5 +139,5 @@ function everyinterval(shift) {
 }
 
 function accelerate(shift) {
-  myGamePiece.gravity = shift;
+  bird.gravity = shift;
 }
