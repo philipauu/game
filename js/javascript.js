@@ -99,7 +99,6 @@ function component(width, height, color, x, y, type) {
 function updateGameArea() {
   console.log('Inside updateGameArea');
 
-
   var x, height, gap, minHeight, maxHeight, minGap, maxGap;
   for (counter = 0; counter < obstacles.length; counter += 1) {
     if (bird.crashWith(obstacles[counter])) {
@@ -127,7 +126,7 @@ function updateGameArea() {
   }
   score.text = "SCORE: " + myGameArea.frameNo;
   score.update();
-  bird.newPos();
+    bird.newPos();
   bird.update();
 }
 
