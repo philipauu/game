@@ -18,6 +18,7 @@ var myGameArea = {
 
 var bird;
 var obstacles = [];
+var obstacle;
 var score;
 
 $(document).ready(setup);
@@ -31,10 +32,10 @@ function setup() {
 function startGame() {
   console.log('Inside startGame');
 
-  bird = new component(30, 30, "pink", 10, 120);
+  bird = new component(30, 30, "khaki", 10, 120);
   bird.gravity = 0.04;
   score = new component('30px', 'times new roman', 'black', 280, 40, 'text');
-  obstacles = new component(10, 200, "green", 300, 120);
+  obstacle = new component(10, 200, "green", 300, 120);
   myGameArea.start();
 }
 
@@ -116,8 +117,9 @@ function updateGameArea() {
     minGap = 50;
     maxGap = 200;
     gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
-    // obstacles.push(new component(10, height, "yellow", x, 0));
-    // obstacles.push(new component(10, x - height - gap, "yellow", x, height + gap));
+
+    obstacles.push(new component(10, height, "green", 10, 0));
+    obstacles.push(new component(10, x - height - gap, "green", x, height + gap));
   }
 
   for (counter = 0; counter < obstacles.length; counter += 1) {
@@ -126,7 +128,7 @@ function updateGameArea() {
   }
   score.text = "SCORE: " + myGameArea.frameNo;
   score.update();
-    bird.newPos();
+  bird.newPos();
   bird.update();
 }
 
