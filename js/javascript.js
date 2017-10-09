@@ -45,8 +45,8 @@ function component(width, height, color, x, y, type) {
   this.score = 0;
   this.width = width;
   this.height = height;
-  this.speedX = 0;
-  this.speedY = 0;
+  this.speedX = -1;
+  this.speedY = -1;
   this.x = x;
   this.y = y;
   this.gravity = 0;
