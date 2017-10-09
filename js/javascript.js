@@ -101,7 +101,7 @@ function updateGameArea() {
   console.log('Inside updateGameArea');
 
   var x, height, gap, minHeight, maxHeight, minGap, maxGap;
-  for (counter = 0; counter < obstacles.length; counter += 3) {
+  for (counter = 0; counter < obstacles.length; counter += 1) {
     if (bird.crashWith(obstacles[counter])) {
       return;
     }
@@ -122,7 +122,7 @@ function updateGameArea() {
     obstacles.push(new component(20, x - height - gap, "pink", x, height + gap));
   }
 
-  for (counter = 0; counter < obstacles.length; counter += 3) {
+  for (counter = 0; counter < obstacles.length; counter += 1) {
     obstacles[counter].x += -3;
     obstacles[counter].update();
   }
