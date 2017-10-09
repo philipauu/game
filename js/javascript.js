@@ -118,7 +118,7 @@ function updateGameArea() {
     maxGap = 200;
     gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
 
-    obstacles.push(new component(20, height, "pink", x, 0));
+    obstacles.push(new component(20, height, "cartoon bird.jpg", x, 0));
     obstacles.push(new component(20, x - height - gap, "pink", x, height + gap));
   }
 
