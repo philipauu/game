@@ -143,6 +143,4 @@ function accelerate(shift) {
   bird.gravity = shift;
 }
 
-function clear() {
-  document.getElementById("myForm").reset();
-}
+location.reload();
