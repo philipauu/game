@@ -144,5 +144,5 @@ function accelerate(shift) {
 }
 
 function replay() {
-  location.reload();
+  window.location.reload(false);
 }
