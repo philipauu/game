@@ -21,6 +21,14 @@ var obstacles = [];
 var obstacle;
 var score;
 
+var current_player = true;
+var player_name_1 = 'Player 1',
+  player_name_2 = 'Player 2',
+  current_name = 'Player 1';
+var token_1 = 'Player 1',
+  token_2 = 'Player 2',
+  current_token = 'Player 1';
+
 $(document).ready(setup);
 
 function setup() {
@@ -33,7 +41,7 @@ function startGame() {
   console.log('Inside startGame');
 
   bird = new component(30, 30, "khaki", 10, 120);
-  bird.gravity = 0.04;
+  bird.gravity = 0.07;
   score = new component('30px', 'times new roman', 'black', 280, 40, 'text');
 
   myGameArea.start();
@@ -83,7 +91,7 @@ function component(width, height, color, x, y, type) {
     var otherleft = otherobj.x;
     var otherright = otherobj.x + (this.width);
     var othertop = otherobj.y;
-    var otherbottom = otherobj.y(this.height);
+    var otherbottom = otherobj.y + (this.height);
 
     var crash = true;
 
@@ -118,8 +126,8 @@ function updateGameArea() {
     maxGap = 200;
     gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
 
-    //obstacles.push(new component(10, height, "green", 10, 0));
-    //obstacles.push(new component(10, x - height - gap, "green", x, height + gap));
+    obstacles.push(new component(10, height, "green", 10, 0));
+    obstacles.push(new component(10, x - height - gap, "green", x, height + gap));
   }
 
   for (counter = 0; counter < obstacles.length; counter += 1) {
@@ -141,4 +149,14 @@ function everyinterval(shift) {
 
 function accelerate(shift) {
   bird.gravity = shift;
+}
+
+function change_player() {
+  console.log('Inside change_player');
+
+  console.log('swaps players AND token');
+  current_player = !current_player;
+  current_name = current_player ? player_name_1 : player_name_2;
+  current_token = current_player ? 'Player 1' : 'Player 2'
+  console.log('player is now: ', current_name);
 }
