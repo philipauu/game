@@ -47,7 +47,6 @@ function component(width, height, color, x, y, type) {
   this.height = height;
   this.speedX = 0;
   this.speedY = 0;
-  this.angle = 0;
   this.x = x;
   this.y = y;
   this.gravity = 0;
@@ -62,11 +61,6 @@ function component(width, height, color, x, y, type) {
       ctx.fillStyle = color;
       ctx.fillRect(this.x, this.y, this.width, this.height);
     }
-    ctx.save();
-    ctx.translate(this.x, this.y);
-    ctx.rotate(this.angle);
-    ctx.fillRect(this.width / -2, this.height / -2, this.width, this.height);
-    ctx.restore();
   }
   this.newPos = function() {
     this.gravitySpeed += this.gravity;
@@ -136,7 +130,6 @@ function updateGameArea() {
   score.update();
   bird.newPos();
   bird.update();
-  bird.angle += 1 * Math.PI / 180;
 }
 
 function everyinterval(shift) {
