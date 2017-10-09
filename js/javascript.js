@@ -145,4 +145,5 @@ function accelerate(shift) {
 
 function replay() {
   document.getElementById('end_screen').style.display = 'none';
+  location.reload();
 }
