@@ -32,7 +32,7 @@ function setup() {
 function startGame() {
   console.log('Inside startGame');
 
-  bird = new component(30, 30, "red", 10, 120, "image");
+  bird = new component(30, 30, "/Users/Phil/GA/project1game/images/cartoon bird.jpg", 10, 120, "image");
   bird.gravity = 0.07;
   score = new component('30px', 'times new roman', 'black', 280, 40, 'text');
 
@@ -42,6 +42,10 @@ function startGame() {
 function component(width, height, color, x, y, type) {
 
   this.type = type;
+  if (type == "image") {
+    this.image = new Image();
+    this.image.src = color;
+  }
   this.score = 0;
   this.width = width;
   this.height = height;
