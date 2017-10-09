@@ -142,3 +142,7 @@ function everyinterval(shift) {
 function accelerate(shift) {
   bird.gravity = shift;
 }
+
+function clear() {
+  document.getElementById("myForm").reset();
+}
