@@ -3,11 +3,4 @@ button {
   left: 1%;
   top: 45%; }
 
-#end_screen {
-  position: absolute;
-  width: 600px;
-  height: 400px;
-  background-color: gray;
-  display: none; }
-
 /*# sourceMappingURL=style.css.map */
