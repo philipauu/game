@@ -101,7 +101,7 @@ function updateGameArea() {
   console.log('Inside updateGameArea');
 
   var x, height, gap, minHeight, maxHeight, minGap, maxGap;
-  for (counter = 1; counter < obstacles.length; counter += 1) {
+  for (counter = 0; counter < obstacles.length; counter += 1) {
     if (bird.crashWith(obstacles[counter])) {
       return;
     }
@@ -109,7 +109,7 @@ function updateGameArea() {
 
   myGameArea.clear();
   myGameArea.frameNo += 1;
-  if (myGameArea.frameNo == 1 || everyinterval(50)) {
+  if (myGameArea.frameNo == 1 || everyinterval(100)) {
     x = myGameArea.canvas.width;
     minHeight = 20;
     maxHeight = 200;
