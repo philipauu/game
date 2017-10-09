@@ -143,11 +143,6 @@ function accelerate(shift) {
   bird.gravity = shift;
 }
 
-function gameover() {
-        this.draw = function(){
-            ctx.font = "60px Arial"
-            ctx.fillStyle = "Black"
-            ctx.fillText("GAMEOVER!!!",20,100)
-            clearInterval(animateInterval);
-        }
-    }
+function replay() {
+  document.getElementById('end_screen').style.display = 'none';
+}
