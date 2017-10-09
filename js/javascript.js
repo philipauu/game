@@ -101,7 +101,7 @@ function updateGameArea() {
   console.log('Inside updateGameArea');
 
   var x, height, gap, minHeight, maxHeight, minGap, maxGap;
-  for (counter = 0; counter < obstacles.length; counter += 1) {
+  for (counter = 0; counter < obstacles.length; counter += 0) {
     if (bird.crashWith(obstacles[counter])) {
       return;
     }
