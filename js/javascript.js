@@ -108,7 +108,7 @@ function updateGameArea() {
   var x, height, gap, minHeight, maxHeight, minGap, maxGap;
   for (counter = 0; counter < obstacles.length; counter += 1) {
     if (bird.crashWith(obstacles[counter])) {
-      return;
+      startGame();
     }
   }
 
