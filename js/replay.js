@@ -1,7 +1,7 @@
 // `input` will be defined elsewhere, it's a means
 // for us to capture the state of input from the player
 
-var startScreen = (function(input) {
+var replay = (function(input) {
 
   // the red component of rgb
   var hue = 0;
