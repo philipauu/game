@@ -143,3 +143,14 @@ function everyinterval(shift) {
 function accelerate(shift) {
   bird.gravity = shift;
 }
+
+$("#Restart").click(function() {  
+            console.log("Restart Works");
+            gamerestart();
+            ctx.fill
+    });
+function gamerestart(){
+    game = 'gamerestart';
+    ctx.fillStyle = '#00008b';
+    ctx.fillRect(0,0, canvas.width, canvas.height);
+}
