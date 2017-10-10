@@ -19,6 +19,7 @@ var myGameArea = {
 
 var bird;
 var obstacles = [];
+
 var score;
 
 $(document).ready(setup);
