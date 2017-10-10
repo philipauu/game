@@ -128,7 +128,7 @@ function updateGameArea() {
   }
 
   for (counter = 0; counter < obstacles.length; counter += 1) {
-    obstacles[counter].x += -1;
+    obstacles[counter].x += -3;
     obstacles[counter].update();
   }
   score.text = "SCORE: " + myGameArea.frameNo;
