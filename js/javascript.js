@@ -33,8 +33,6 @@ function setup() {
   startGame();
 }
 
-
-
 function startGame() {
   console.log('Inside startGame');
 
