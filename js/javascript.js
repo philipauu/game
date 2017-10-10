@@ -33,7 +33,7 @@ function setup() {
 function startGame() {
   console.log('Inside startGame');
 
-  bird = new component(30, 30, "palevioletred", 10, 120);
+  bird = new component(30, 30, "/Users/Phil/GA/project1game/images/cartoon bird.jpg", 10, 120);
   bird.gravity = 0.05;
   score = new component('30px', 'times new roman', 'black', 280, 40, 'text');
 
@@ -143,13 +143,3 @@ function everyinterval(shift) {
 function accelerate(shift) {
   bird.gravity = shift;
 }
-
-window.onload = function() {
-
-var img = new Image();
-
-img.onload = function() {
-
-};
-img.src = 'images/cartoon bird.jpg';
-};
