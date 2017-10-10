@@ -146,6 +146,6 @@ function accelerate(shift) {
 
 $("#restart").click(function() {
   console.log("Restart Works");
-  startGame();
+  myGameArea.start();
   ctx.fill
 });
