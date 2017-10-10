@@ -144,8 +144,8 @@ function accelerate(shift) {
   bird.gravity = shift;
 }
 
-// $("#Restart").click(function() {
-//   console.log("Restart Works");
-//   gamerestart();
-//   ctx.fill
-// });
+$("#Restart").click(function() {
+  console.log("Restart Works");
+  startGame();
+  ctx.fill
+});
