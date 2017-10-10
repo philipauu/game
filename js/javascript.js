@@ -32,7 +32,7 @@ function setup() {
 function startGame() {
   console.log('Inside startGame');
 
-  bird = new component(30, 30, "khaki", 10, 120);
+  bird = new component(30, 30, "lemonchiffon", 10, 120);
   bird.gravity = 0.05;
   score = new component('30px', 'times new roman', 'black', 280, 40, 'text');
 
@@ -118,8 +118,8 @@ function updateGameArea() {
     maxGap = 200;
     gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
 
-    obstacles.push(new component(20, height, "pink", x, 0));
-    obstacles.push(new component(20, x - height - gap, "pink", x, height + gap));
+    obstacles.push(new component(20, height, "lightgreen", x, 0));
+    obstacles.push(new component(20, x - height - gap, "lightgreen", x, height + gap));
   }
 
   for (counter = 0; counter < obstacles.length; counter += 1) {
