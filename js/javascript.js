@@ -2,6 +2,9 @@ console.log('up and running!');
 
 var myGameArea = {
   canvas: document.createElement("canvas"),
+  var ctx = canvas.getContext("2d");
+  var img = new Image();
+
   start: function() {
     this.canvas.width = 480;
     this.canvas.height = 270;
@@ -143,6 +146,10 @@ function accelerate(shift) {
   bird.gravity = shift;
 }
 
-function replay() {
-  window.location.reload(false);
-}
+window.onload = function() {
+
+img.onload = function() {
+  ctx.drawImage(img, 250, 150);
+};
+img.src = 'images/cartoon bird.jpg';
+};
