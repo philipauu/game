@@ -26,9 +26,14 @@ $(document).ready(setup);
 
 function setup() {
   console.log('Inside setup');
-
+  $("#restart").click(function() {
+    console.log("Restart Works");
+    startGame();
+  });
   startGame();
 }
+
+
 
 function startGame() {
   console.log('Inside startGame');
@@ -143,9 +148,3 @@ function everyinterval(shift) {
 function accelerate(shift) {
   bird.gravity = shift;
 }
-
-$("#restart").click(function() {
-  console.log("Restart Works");
-  myGameArea.start();
-  ctx.fill
-});
