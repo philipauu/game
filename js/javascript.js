@@ -32,7 +32,7 @@ function setup() {
 function startGame() {
   console.log('Inside startGame');
 
-  bird = new component(30, 30, "lemonchiffon", 10, 120);
+  bird = new component(30, 30, "palevioletred", 10, 120);
   bird.gravity = 0.05;
   score = new component('30px', 'times new roman', 'black', 280, 40, 'text');
 
