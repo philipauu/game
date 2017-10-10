@@ -149,8 +149,3 @@ function accelerate(shift) {
 //   gamerestart();
 //   ctx.fill
 // });
-
-$newDiv = $('<div>');
-$newDiv.html('Winner!');
-$newDiv.addClass('winner');
-$('#notices').append($newDiv);
