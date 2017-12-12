@@ -14,6 +14,9 @@ var myGameArea = {
 
   clear: function() {
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+  },
+  stop: function() {
+    clearInterval(this.interval);
   }
 }
 
@@ -108,7 +111,8 @@ function updateGameArea() {
   var x, height, gap, minHeight, maxHeight, minGap, maxGap;
   for (counter = 0; counter < obstacles.length; counter += 1) {
     if (bird.crashWith(obstacles[counter])) {
-      return;
+      myGameArea.stop();
+      //return;
     }
   }
 

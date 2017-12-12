@@ -1,1 +1,1 @@
-new site for game
+new repo for project1game
